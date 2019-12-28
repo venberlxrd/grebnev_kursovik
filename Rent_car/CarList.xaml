@@ -1,0 +1,16 @@
+﻿<Window x:Class="Rent_car.CarList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rent_car"
+        mc:Ignorable="d"
+        Title="Автомобили" Height="400" Width="650">
+    <Grid>
+        <DataGrid x:Name="Carlistgrid" HorizontalAlignment="Left" Height="288" Margin="26,10,0,0" VerticalAlignment="Top" Width="573" Loaded="dataGrid_Loaded" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="Carlistgrid_MouseDoubleClick"/>
+        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="26,303,0,0" VerticalAlignment="Top" Width="104" Height="26" Click="button_Click"/>
+        <Button x:Name="button1" Content="Назад" HorizontalAlignment="Left" Margin="497,303,0,0" VerticalAlignment="Top" Width="102" Click="button1_Click" Height="26"/>
+
+
+    </Grid>
+</Window>

@@ -55,13 +55,20 @@ namespace Rent_car
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            rentcarEntities db = new rentcarEntities();
-            var car = db.Cars.Find(SecurityContext.idClient);
-            db.Cars.Remove(db.Cars.Where(dr => dr.idCar == SecurityContext.idClient).FirstOrDefault());
-            db.SaveChanges();
-            CarList re = new CarList();
-            this.Hide();
-            re.Show();
+            try
+            {
+                rentcarEntities db = new rentcarEntities();
+                var car = db.Cars.Find(SecurityContext.idClient);
+                db.Cars.Remove(db.Cars.Where(dr => dr.idCar == SecurityContext.idClient).FirstOrDefault());
+
+                db.SaveChanges();
+                CarList re = new CarList();
+                this.Hide();
+                re.Show();
+            }
+            catch
+            { MessageBox.Show("Данный автомобиль участвует в заказе"); }
         }
+
     }
 }

@@ -10,5 +10,7 @@ namespace Rent_car
     {
         public static int idOrder;
         public static int idClient;
+        public static int avtovxod;
+        public static int prov;
     }
 }

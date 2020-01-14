@@ -9,7 +9,7 @@
     <Grid>
         <DataGrid x:Name="OrderClientLi" HorizontalAlignment="Left" Height="207" Margin="10,10,0,0" VerticalAlignment="Top" Width="465" Loaded="OrderClientLi_Loaded" SelectionChanged="OrderClientLi_SelectionChanged"/>
         <Button x:Name="button" Content="Назад" HorizontalAlignment="Left" Margin="400,232,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="Оформить заказ" HorizontalAlignment="Left" Margin="267,232,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="button1" Content="Оформить заказ" HorizontalAlignment="Left" Margin="267,232,0,0" VerticalAlignment="Top" Width="128" Click="button1_Click"/>
 
     </Grid>
 </Window>

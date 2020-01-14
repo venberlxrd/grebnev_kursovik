@@ -53,17 +53,30 @@ namespace Rent_car
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            rentcarEntities db = new rentcarEntities();
-            var order = db.Order.Find(SecurityContext.idOrder);
-            order.IdCar = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[0].ToString());
-            order.idClient = int.Parse(dtClient.Rows[ClietnLi.SelectedIndex].ItemArray[0].ToString());
-            order.RentTime = Rentime.Text;
-            order.RentStatus = RenStatus.Text;
-            db.Order.Create();
-            db.SaveChanges();
-            OrderList re = new OrderList();
-            this.Hide();
-            re.Show();
+            try
+            { if (Rentime.Text != "" && RenStatus.Text != "")
+                {
+                    rentcarEntities db = new rentcarEntities();
+                    var order = db.Order.Find(SecurityContext.idOrder);
+                    order.IdCar = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[0].ToString());
+                    order.idClient = int.Parse(dtClient.Rows[ClietnLi.SelectedIndex].ItemArray[0].ToString());
+                    order.RentTime = Rentime.Text;
+                    order.RentStatus = RenStatus.Text;
+                    db.Order.Create();
+                    db.SaveChanges();
+                    OrderList re = new OrderList();
+                    this.Hide();
+                    re.Show();
+                }
+            else
+                {
+                    MessageBox.Show("Вы заполнили не все поля");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Вы заполнили не все поля");
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

@@ -26,23 +26,30 @@ namespace Rent_car
 
         private void aut_Click(object sender, RoutedEventArgs e)
         {
-            rentcarEntities db = new rentcarEntities();
-            Users save = new Users
+            if (Name.Text != "" && SecondName.Text != "" && MiddlName.Text != "" && Phone.Text != "" && Login.Text != "" && Password.Text != "")
+            { 
+                rentcarEntities db = new rentcarEntities();
+            Users save = new Users // Класс пользователя
             {
-                  Name = Name.Text,
-                  SecondName = SecondName.Text,
-                  MiddlName = MiddlName.Text,
-                  PhoneNumber = Phone.Text,
-                  Login = Login.Text,
-                  Password = Password.Text,
-                  Role  ="Client"
+                Name = Name.Text,
+                SecondName = SecondName.Text,
+                MiddlName = MiddlName.Text,
+                PhoneNumber = Phone.Text,
+                Login = Login.Text,
+                Password = Password.Text,
+                Role = "Client"
             };
-            db.Users.Add(save);
-            db.SaveChanges();
+            db.Users.Add(save); // добавление класса пользователя
+            db.SaveChanges();   // Сохранение класса пользователя
             MessageBox.Show("Клиент добавлен");
             MainWindow reg = new MainWindow();
             this.Hide();
             reg.Show();
+        }
+           else
+            {
+                MessageBox.Show("Вы заполнили не все поля");
+            }
         }
     }
 }

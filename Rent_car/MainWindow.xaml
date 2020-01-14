@@ -5,16 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rent_car"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="348" Width="499">
     <Grid>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="23" Margin="340,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="340,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button  x:Name="aut" Content="Авторизация" HorizontalAlignment="Left" Margin="362,170,0,0" VerticalAlignment="Top" Width="75" Click="aut_Click"/>
-        <Label x:Name="label" Content="Логин" HorizontalAlignment="Left" Margin="276,91,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Пароль" HorizontalAlignment="Left" Margin="276,118,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="reg" Content="Регистрация" HorizontalAlignment="Left" Margin="258,170,0,0" VerticalAlignment="Top" Width="75" Click="reg_Click"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="224,288,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="224,313,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="23" Margin="206,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Login_TextChanged"/>
+        <Button  x:Name="aut" Content="Авторизация" HorizontalAlignment="Left" Margin="285,190,0,0" VerticalAlignment="Top" Width="86" Click="aut_Click" Height="30"/>
+        <Label x:Name="label" Content="Логин" HorizontalAlignment="Left" Margin="157,93,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Пароль" HorizontalAlignment="Left" Margin="150,118,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="reg" Content="Регистрация" HorizontalAlignment="Left" Margin="104,190,0,0" VerticalAlignment="Top" Width="86" Click="reg_Click" Height="30"/>
+        <Button x:Name="button2" Content="Просмотреть список авто" HorizontalAlignment="Left" Margin="150,255,0,0" VerticalAlignment="Top" Width="179" Click="button2_Click" Height="39"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="206,121,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
 
     </Grid>
 </Window>

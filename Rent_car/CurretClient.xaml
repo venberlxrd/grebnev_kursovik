@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="CurretClient" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="27" Margin="392,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="SecondName" HorizontalAlignment="Left" Height="26" Margin="392,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="MiddlName" HorizontalAlignment="Left" Height="27" Margin="392,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="26" Margin="392,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="27" Margin="392,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="26" Margin="392,241,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="579,380,0,0" VerticalAlignment="Top" Width="99" Click="button_Click" Height="29"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="684,380,0,0" VerticalAlignment="Top" Width="98" Click="button1_Click" Height="29"/>
-        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="660,10,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-        <Label x:Name="label" Content="Имя" HorizontalAlignment="Left" Margin="283,78,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
-        <Label x:Name="label_Copy" Content="Фамилия" HorizontalAlignment="Left" Margin="283,111,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
-        <Label x:Name="label_Copy1" Content="Отчество" HorizontalAlignment="Left" Margin="283,138,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
-        <Label x:Name="label_Copy2" Content="Телефон" HorizontalAlignment="Left" Margin="283,172,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
-        <Label x:Name="label_Copy3" Content="Логин" HorizontalAlignment="Left" Margin="283,204,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
-        <Label x:Name="label_Copy4" Content="Пароль" HorizontalAlignment="Left" Margin="283,237,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="27" Margin="119,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="SecondName" HorizontalAlignment="Left" Height="26" Margin="119,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="MiddlName" HorizontalAlignment="Left" Height="27" Margin="119,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="26" Margin="119,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="27" Margin="119,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="26" Margin="119,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="button" Content="Обновить" HorizontalAlignment="Left" Margin="14,366,0,0" VerticalAlignment="Top" Width="99" Click="button_Click" Height="29"/>
+        <Button x:Name="button1" Content="Удалить" HorizontalAlignment="Left" Margin="119,366,0,0" VerticalAlignment="Top" Width="98" Click="button1_Click" Height="29"/>
+        <Button x:Name="button2" Content="Назад" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Label x:Name="label" Content="Имя" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <Label x:Name="label_Copy" Content="Фамилия" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <Label x:Name="label_Copy1" Content="Отчество" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <Label x:Name="label_Copy2" Content="Телефон" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <Label x:Name="label_Copy3" Content="Логин" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
+        <Label x:Name="label_Copy4" Content="Пароль" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Height="27" Width="104"/>
 
     </Grid>
 </Window>

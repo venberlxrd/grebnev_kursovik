@@ -73,5 +73,13 @@ namespace Rent_car
         {
 
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            SecurityContext.avtovxod = 1;
+            AddOrder re = new AddOrder();
+            this.Hide();
+            re.Show();
+        }
     }
 }

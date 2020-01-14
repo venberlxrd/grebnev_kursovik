@@ -27,30 +27,51 @@ namespace Rent_car
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            rentcarEntities db = new rentcarEntities();
-            Order save = new Order
+            rentcarEntities db = new rentcarEntities();  // подключение бд
+            Order save = new Order // создание класса SAVE
             {
                 RentStatus = RenStatus.Text,
-                RentTime = RenTime.Text
+                IdCar = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[0].ToString()), // Из класса SAVE выбираются 4 переменные, в которые добавляются 4 переменные которые ввел пользователь
+                idClient = int.Parse(dtClient.Rows[ClientLi.SelectedIndex].ItemArray[0].ToString()),
+            RentTime = RenTime.Text
 
-        };
-            save.IdCar = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[0].ToString());
-            save.idClient = int.Parse(dtClient.Rows[ClientLi.SelectedIndex].ItemArray[0].ToString());
-            db.Order.Add(save);
+            };
+            
+            db.Order.Add(save); // далее идет добавление и сохранение данных в бд
             db.SaveChanges();
             MessageBox.Show("Заказ добавлен");
-            OrderList reg = new OrderList();
-            this.Hide();
-            reg.Show();
+            if (SecurityContext.avtovxod == 3)
+            {
+                OrderList reg = new OrderList();
+               
+                this.Hide();
+                reg.Show();
+            }
+            if (SecurityContext.avtovxod == 1)
+            {
+                OrderClient reg = new OrderClient();
+                this.Hide();
+                reg.Show();
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            OrderList reg = new OrderList();
-            this.Hide();
-            reg.Show();
+            if (SecurityContext.avtovxod == 3)
+            {
+                OrderList reg = new OrderList();
+               
+                this.Hide();
+                reg.Show();
+            }
+            if (SecurityContext.avtovxod == 1)
+            {
+                OrderClient reg = new OrderClient();
+                this.Hide();
+                reg.Show();
+            }
         }
-        DataTable dtClient = GetClientList();
+        DataTable dtClient = GetClientList(); 
         DataTable dtCar = GetCarList();
         private void ClientLi_Loaded(object sender, RoutedEventArgs e)
         {
@@ -65,13 +86,23 @@ namespace Rent_car
             dtClient.Columns.Add("Имя");
             dtClient.Columns.Add("Отчество");
             dtClient.Columns.Add("Номер телефона");
-            var Query = db.Users;
+            var Query = db.Users; // Запрос на выборку данных из таблицы Users
 
-            foreach (var rel in Query)
-            {
-                if(rel.Role == "Client")
-                dtClient.Rows.Add(rel.IdUser, rel.SecondName, rel.Name, rel.MiddlName, rel.PhoneNumber);
+            foreach (var rel in Query) // Отображение данных в DataGrid 
+            { if (SecurityContext.avtovxod == 3) // Вошел менеджер
+                {
+                    if (rel.Role == "Client")  // Отображение только клиентов
+                        dtClient.Rows.Add(rel.IdUser, rel.SecondName, rel.Name, rel.MiddlName, rel.PhoneNumber);
+                }
+                if (SecurityContext.avtovxod == 1) // Вошел клиент
+                {
+                    if (SecurityContext.idClient == rel.IdUser) // Клиент видит только себя
+                    {
+                        if (rel.Role == "Client") // Отображается только клиент
+                            dtClient.Rows.Add(rel.IdUser, rel.SecondName, rel.Name, rel.MiddlName, rel.PhoneNumber);
 
+                    }
+                }
             }
             return dtClient;
         }
@@ -91,7 +122,7 @@ namespace Rent_car
             dtClient.Columns.Add("Год выпуска");
             dtClient.Columns.Add("Страна");
             dtClient.Columns.Add("VIN");
-            var Query = db.Cars;
+            var Query = db.Cars; // Выбираются данные из таблицы Автомобили
 
             foreach (var rel in Query)
             {

@@ -27,35 +27,39 @@ namespace Rent_car
 
         private void aut_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (Login.Text != "" && Password.Password != "")
             {
-
-                rentcarEntities db = new rentcarEntities();
-                var rol = db.Users.Where(us => us.Login == Login.Text && us.Password == Password.Text).FirstOrDefault().Role;
-                var f = db.Users.Where(us => us.Login == Login.Text && us.Password == Password.Text).FirstOrDefault().IdUser;
-
-                if (rol == "Client")
+                try
                 {
-                    ClientForn re = new ClientForn();
-                    this.Hide();
-                    SecurityContext.idClient = f;
-                    re.Show();
+
+                    rentcarEntities db = new rentcarEntities(); 
+                    var rol = db.Users.Where(us => us.Login == Login.Text && us.Password == Password.Password).FirstOrDefault().Role; //
+                    var f = db.Users.Where(us => us.Login == Login.Text && us.Password == Password.Password).FirstOrDefault().IdUser;
+
+                    if (rol == "Client")
+                    {
+                        ClientForn re = new ClientForn();
+                        this.Hide();
+                        SecurityContext.idClient = f;
+                        re.Show();
+                        SecurityContext.avtovxod = 1;
+                    }
+                    else if (rol == "Manager")
+                    {
+                        ManagerForm re = new ManagerForm();
+                        this.Hide();
+                        re.Show();
+                        SecurityContext.avtovxod = 3;
+                    }
                 }
-                else if (rol == "Manager")
+                catch
                 {
-                    ManagerForm re = new ManagerForm();
-                    this.Hide();
-                    re.Show();
+                    MessageBox.Show("Вы ввели неправильно логин или пароль");
                 }
-
-
-
-
-
             }
-            catch
+            else
             {
-                MessageBox.Show("Данный логин уже существует");
+                MessageBox.Show("Вы заполнили не все поля");
             }
         }
 
@@ -76,6 +80,19 @@ namespace Rent_car
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             ClientForn re = new ClientForn();
+            this.Hide();
+            re.Show();
+        }
+
+        private void Login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            CarListClient re = new CarListClient();
+            SecurityContext.avtovxod = 2;
             this.Hide();
             re.Show();
         }

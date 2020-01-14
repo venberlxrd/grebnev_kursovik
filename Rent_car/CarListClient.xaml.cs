@@ -66,9 +66,18 @@ namespace Rent_car
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            ClientForn cur = new ClientForn();
-            this.Hide();
-            cur.Show();
+            if (SecurityContext.avtovxod == 1)
+            {
+                ClientForn cur = new ClientForn();
+                this.Hide();
+                cur.Show();
+            }
+            if (SecurityContext.avtovxod == 2)
+            {
+                MainWindow cur = new MainWindow();
+                this.Hide();
+                cur.Show();
+            }
         }
     }
 }

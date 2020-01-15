@@ -14,7 +14,7 @@
         <Button x:Name="button2" Content="Назад" HorizontalAlignment="Left" Margin="475,263,0,0" VerticalAlignment="Top" Width="100" Click="button2_Click" Height="27"/>
         <Label x:Name="label_Copy1" Content="Статус аренды" HorizontalAlignment="Left" Margin="575,16,0,0" VerticalAlignment="Top" Width="92"/>
         <Label x:Name="label_Copy2" Content="Время аренды" HorizontalAlignment="Left" Margin="575,47,0,0" VerticalAlignment="Top" Width="92"/>
-        <DataGrid CanUserAddRows="False" CanUserDeleteRows="False"  IsReadOnly="True" x:Name="CarLi" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="565" Loaded="CarLi_Loaded"/>
+        <DataGrid CanUserAddRows="False" CanUserDeleteRows="False"  IsReadOnly="True" x:Name="CarLi" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="565" Loaded="CarLi_Loaded" SelectionChanged="CarLi_SelectionChanged"/>
         <DataGrid CanUserAddRows="False" CanUserDeleteRows="False"  IsReadOnly="True" x:Name="ClietnLi" HorizontalAlignment="Left" Height="114" Margin="10,137,0,0" VerticalAlignment="Top" Width="565" SelectionChanged="ClietnLi_SelectionChanged"/>
 
     </Grid>

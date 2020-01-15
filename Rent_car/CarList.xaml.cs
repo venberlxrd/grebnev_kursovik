@@ -41,6 +41,7 @@ namespace Rent_car
             dtClient.Columns.Add("Страна изготовитель");
             dtClient.Columns.Add("VIN");
             dtClient.Columns.Add("Статус");
+            dtClient.Columns.Add("Цена");
            
             var Query = db.Cars;
 
@@ -48,7 +49,7 @@ namespace Rent_car
             {
              
                 {
-                    dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry, rel.VIN, rel.CarAvailable);
+                    dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry, rel.VIN, rel.CarAvailable, rel.CarPrice);
                 }
             }
             return dtClient;

@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e71c22ff601e4bf299c51cb3341b1c08" Name="Diagram1">
-        <EntityTypeShape EntityType="rentcarModel.Cars" Width="1.5" PointX="0.75" PointY="6.875" />
-        <EntityTypeShape EntityType="rentcarModel.Order" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="rentcarModel.Cars" Width="1.5" PointX="0.625" PointY="5.25" />
+        <EntityTypeShape EntityType="rentcarModel.Order" Width="1.5" PointX="3.625" PointY="7.25" />
         <EntityTypeShape EntityType="rentcarModel.RentCar" Width="1.5" PointX="3" PointY="2.375" />
         <EntityTypeShape EntityType="rentcarModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="rentcarModel.SystemUser" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="rentcarModel.SystemUser" Width="1.5" PointX="3.625" PointY="4.875" />
         <EntityTypeShape EntityType="rentcarModel.Users" Width="1.5" PointX="0.75" PointY="1.875" />
         <AssociationConnector Association="rentcarModel.FK_Order_Cars" />
         <AssociationConnector Association="rentcarModel.FK_RentCar_Cars" />

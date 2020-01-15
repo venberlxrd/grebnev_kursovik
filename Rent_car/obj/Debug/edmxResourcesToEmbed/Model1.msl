@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Cars">
       <EntityTypeMapping TypeName="rentcarModel.Cars">
         <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
           <ScalarProperty Name="CarAvailable" ColumnName="CarAvailable" />
           <ScalarProperty Name="VIN" ColumnName="VIN" />
           <ScalarProperty Name="CarCountry" ColumnName="CarCountry" />
@@ -17,6 +18,7 @@
     <EntitySetMapping Name="Order">
       <EntityTypeMapping TypeName="rentcarModel.Order">
         <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Summ" ColumnName="Summ" />
           <ScalarProperty Name="idClient" ColumnName="idClient" />
           <ScalarProperty Name="RentStatus" ColumnName="RentStatus" />
           <ScalarProperty Name="RentTime" ColumnName="RentTime" />

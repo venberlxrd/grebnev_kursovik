@@ -16,6 +16,7 @@
           <Property Name="CarCountry" Type="varchar" MaxLength="50" />
           <Property Name="VIN" Type="varchar" MaxLength="50" />
           <Property Name="CarAvailable" Type="varchar" MaxLength="50" />
+          <Property Name="CarPrice" Type="int" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -26,6 +27,7 @@
           <Property Name="RentTime" Type="nvarchar" MaxLength="50" />
           <Property Name="RentStatus" Type="nvarchar" MaxLength="50" />
           <Property Name="idClient" Type="int" />
+          <Property Name="Summ" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="RentCar">
           <Key>
@@ -179,6 +181,7 @@
           <Property Name="CarAvailable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Order" Relationship="rentcarModel.FK_Order_Cars" FromRole="Cars" ToRole="Order" />
           <NavigationProperty Name="RentCar" Relationship="rentcarModel.FK_RentCar_Cars" FromRole="Cars" ToRole="RentCar" />
+          <Property Name="CarPrice" Type="Int32" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -190,6 +193,7 @@
           <Property Name="RentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idClient" Type="Int32" />
           <NavigationProperty Name="Cars" Relationship="rentcarModel.FK_Order_Cars" FromRole="Order" ToRole="Cars" />
+          <Property Name="Summ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="RentCar">
           <Key>
@@ -292,6 +296,7 @@
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="rentcarModel.Cars">
               <MappingFragment StoreEntitySet="Cars">
+                <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
                 <ScalarProperty Name="CarAvailable" ColumnName="CarAvailable" />
                 <ScalarProperty Name="VIN" ColumnName="VIN" />
                 <ScalarProperty Name="CarCountry" ColumnName="CarCountry" />
@@ -305,6 +310,7 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="rentcarModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Summ" ColumnName="Summ" />
                 <ScalarProperty Name="idClient" ColumnName="idClient" />
                 <ScalarProperty Name="RentStatus" ColumnName="RentStatus" />
                 <ScalarProperty Name="RentTime" ColumnName="RentTime" />

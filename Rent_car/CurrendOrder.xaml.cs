@@ -31,6 +31,7 @@ namespace Rent_car
             var order = db.Order.Find(SecurityContext.idOrder);
             RenStatus.Text = order.RentStatus;
             Rentime.Text = order.RentTime;
+           
 
             CarLi.ItemsSource = dtCar.DefaultView;
             ClietnLi.ItemsSource = dtClient.DefaultView;
@@ -62,6 +63,9 @@ namespace Rent_car
                     order.idClient = int.Parse(dtClient.Rows[ClietnLi.SelectedIndex].ItemArray[0].ToString());
                     order.RentTime = Rentime.Text;
                     order.RentStatus = RenStatus.Text;
+                    double f = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[6].ToString()) * int.Parse(Rentime.ToString());
+                    order.Summ = f.ToString();
+                    
                     db.Order.Create();
                     db.SaveChanges();
                     OrderList re = new OrderList();
@@ -131,12 +135,13 @@ namespace Rent_car
             dtClient.Columns.Add("Год выпуска");
             dtClient.Columns.Add("Страна");
             dtClient.Columns.Add("VIN");
+            dtClient.Columns.Add("Цена");
             var Query = db.Cars;
 
             foreach (var rel in Query)
             {
 
-                dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry, rel.VIN);
+                dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry, rel.VIN, rel.CarPrice);
 
             }
             return dtClient;
@@ -145,6 +150,16 @@ namespace Rent_car
         private void ClietnLi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ClietnLi.ItemsSource = dtClient.DefaultView;
+        }
+
+        private void CarLi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RentSum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

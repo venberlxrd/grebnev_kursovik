@@ -29,19 +29,34 @@ namespace Rent_car
             rentcarEntities db = new rentcarEntities();
             Cars save = new Cars
             {
-              Car = Car.Text,
-              CarAvailable = Available.Text,
-              CarCountry = Country.Text,
-              CarModel = Model.Text,
-              CarYear = Data.Text,
-              VIN = Vin.Text
+
+                Car = Car.Text,
+                CarAvailable = Available.Text,
+                CarCountry = Country.Text,
+                CarModel = Model.Text,
+                CarYear = Data.Text,
+                VIN = Vin.Text,
+                CarPrice = int.Parse(CarPrice.Text)
+            
             };
             db.Cars.Add(save);
             db.SaveChanges();
-            MessageBox.Show("Машина добавлен");
+            MessageBox.Show("Машина добавлена");
             CarList reg = new CarList();
             this.Hide();
             reg.Show();
+        }
+
+        private void CarPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            CarList re = new CarList();
+            this.Hide();
+            re.Show();
         }
     }
 }

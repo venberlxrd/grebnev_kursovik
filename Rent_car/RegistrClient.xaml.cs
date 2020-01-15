@@ -51,5 +51,12 @@ namespace Rent_car
                 MessageBox.Show("Вы заполнили не все поля");
             }
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow re = new MainWindow();
+            this.Hide();
+            re.Show();
+        }
     }
 }

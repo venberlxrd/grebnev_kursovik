@@ -19,6 +19,7 @@ namespace Rent_car
         public string RentTime { get; set; }
         public string RentStatus { get; set; }
         public Nullable<int> idClient { get; set; }
+        public string Summ { get; set; }
     
         public virtual Cars Cars { get; set; }
     }

@@ -34,6 +34,7 @@ namespace Rent_car
             car.CarCountry = CarCountry.Text;
             car.CarYear = CarYear.Text;
             car.VIN = VIN.Text;
+            car.CarPrice = int.Parse(CarPrice.Text);
             db.Cars.Create();
             db.SaveChanges();
             CarList re = new CarList();
@@ -51,6 +52,7 @@ namespace Rent_car
             CarCountry.Text = car_.CarCountry;
             CarYear.Text = car_.CarYear;
             VIN.Text = car_.VIN;
+            CarPrice.Text = car_.CarPrice.ToString();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -70,5 +72,9 @@ namespace Rent_car
             { MessageBox.Show("Данный автомобиль участвует в заказе"); }
         }
 
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

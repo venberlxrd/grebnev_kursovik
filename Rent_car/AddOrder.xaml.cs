@@ -30,7 +30,7 @@ namespace Rent_car
             rentcarEntities db = new rentcarEntities();  // подключение бд
             Order save = new Order // создание класса SAVE
             {
-                RentStatus = RenStatus.Text,
+                
                 IdCar = int.Parse(dtCar.Rows[CarLi.SelectedIndex].ItemArray[0].ToString()), // Из класса SAVE выбираются 4 переменные, в которые добавляются 4 переменные которые ввел пользователь
                 idClient = int.Parse(dtClient.Rows[ClientLi.SelectedIndex].ItemArray[0].ToString()),
             RentTime = RenTime.Text
@@ -122,15 +122,44 @@ namespace Rent_car
             dtClient.Columns.Add("Год выпуска");
             dtClient.Columns.Add("Страна");
             dtClient.Columns.Add("VIN");
+            dtClient.Columns.Add("Цена");
+            dtClient.Columns.Add("Стоимость");
+
+
             var Query = db.Cars; // Выбираются данные из таблицы Автомобили
 
             foreach (var rel in Query)
             {
-               
-                    dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry,rel.VIN);
+
+                dtClient.Rows.Add(rel.idCar, rel.Car, rel.CarModel, rel.CarYear, rel.CarCountry, rel.VIN, rel.CarPrice);
 
             }
             return dtClient;
+        }
+
+        private void RentPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ClientLi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RenTime_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void RenStatus_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

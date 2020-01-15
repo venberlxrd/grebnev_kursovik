@@ -48,6 +48,8 @@ namespace Rent_car
             dtClient.Columns.Add("Время аренды");
             dtClient.Columns.Add("ФИО");
             dtClient.Columns.Add("Номер телефона");
+            dtClient.Columns.Add("Цена");
+            dtClient.Columns.Add("Общая цена");
             var query = from order in db.Order
                         join car in db.Cars on order.IdCar equals car.idCar
                         join client in db.Users on order.idClient equals client.IdUser
@@ -58,14 +60,18 @@ namespace Rent_car
                             order.RentStatus,
                             order.RentTime,
                             FIO = client.SecondName + " " + client.Name + " " + client.MiddlName,
-                            Phone = client.PhoneNumber
+                            Phone = client.PhoneNumber,
+                            Price = car.CarPrice,
+                            order.Summ
+
+
                         };
 
 
             foreach (var rel in query)
             {
 
-                dtClient.Rows.Add(rel.idOrder,rel.car, rel.mod, rel.RentStatus, rel.RentTime,rel.FIO,rel.Phone);
+                dtClient.Rows.Add(rel.idOrder,rel.car, rel.mod, rel.RentStatus, rel.RentTime,rel.FIO,rel.Phone,rel.Price, rel.Summ);
 
             }
             return dtClient;

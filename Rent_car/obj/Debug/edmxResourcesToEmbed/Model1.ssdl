@@ -11,6 +11,7 @@
     <Property Name="CarCountry" Type="varchar" MaxLength="50" />
     <Property Name="VIN" Type="varchar" MaxLength="50" />
     <Property Name="CarAvailable" Type="varchar" MaxLength="50" />
+    <Property Name="CarPrice" Type="int" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -21,6 +22,7 @@
     <Property Name="RentTime" Type="nvarchar" MaxLength="50" />
     <Property Name="RentStatus" Type="nvarchar" MaxLength="50" />
     <Property Name="idClient" Type="int" />
+    <Property Name="Summ" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="RentCar">
     <Key>

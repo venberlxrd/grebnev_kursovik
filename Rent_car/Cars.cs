@@ -28,6 +28,7 @@ namespace Rent_car
         public string CarCountry { get; set; }
         public string VIN { get; set; }
         public string CarAvailable { get; set; }
+        public Nullable<int> CarPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
